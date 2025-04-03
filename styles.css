@@ -1,0 +1,498 @@
+/* Basic Reset & Body Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Disable tap highlight globally */
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f0f2f5; /* A light background for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+  /* Font Smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Container */
+.login-container {
+  display: flex;
+  width: 90%;
+  max-width: 1100px; /* Max width of the component */
+  min-height: 650px; /* Adjust height based on final content */
+  background-color: #fff; /* Needed for overflow hidden + border-radius */
+  border-radius: 30px; /* Rounded corners for the whole container */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12); /* Softer shadow */
+  overflow: hidden; /* Important for clipping corners */
+}
+
+/* Left Decorative Panel */
+.decorative-panel {
+  flex-basis: 45%; /* Adjust percentage as needed */
+  /* *** IMPORTANT: Replace with the correct background image URL *** */
+  background-image: url("your-target-background-image.jpg"); /* <--- CHANGE THIS URL */
+  background-size: cover;
+  background-position: center;
+  padding: 60px 50px; /* Adjusted padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  color: #ffffff; /* Corrected text color */
+}
+
+.quote-content {
+  max-width: 400px; /* Limit width of text */
+}
+
+.wise-quote-label {
+  font-size: 0.75rem; /* Slightly smaller */
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Slightly more spacing */
+  margin-bottom: 70px; /* Increased space */
+  opacity: 0.85; /* Slight opacity */
+  color: #ffffff; /* Ensure white */
+}
+
+.decorative-panel h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3.6rem; /* Slightly larger */
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 25px; /* Adjusted spacing */
+  color: #ffffff; /* Ensure white */
+}
+
+.quote-text {
+  font-size: 0.95rem;
+  line-height: 1.7; /* Increased line height */
+  opacity: 0.9;
+  color: #ffffff; /* Ensure white */
+}
+
+/* Right Login Panel */
+.login-panel {
+  flex-basis: 55%; /* Adjust percentage as needed */
+  background-color: #ffffff;
+  padding: 40px 60px; /* Adjusted padding */
+  display: flex; /* Use flex to help manage vertical space */
+  flex-direction: column; /* Stack logo, form, signup link */
+  justify-content: space-between; /* Push elements apart vertically */
+  position: relative; /* Keep for absolute positioning fallback if needed */
+}
+
+/* Logo Styling (for IMG tag) */
+.logo {
+  display: block; /* Make it a block element */
+  align-self: flex-end; /* Align to the right using flexbox */
+  margin-top: 15px; /* Space from top */
+  margin-bottom: 20px; /* Space below logo */
+  height: 28px; /* Adjust height as needed */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.login-form-container {
+  width: 100%;
+  max-width: 380px; /* Slightly adjusted max-width */
+  margin: auto; /* Center horizontally */
+  text-align: center; /* Center heading/subheading */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center form vertically within its space */
+}
+
+.login-form-container h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem; /* Adjusted size */
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 12px; /* Adjusted spacing */
+}
+
+.subheading {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 45px; /* Increased spacing */
+}
+
+/* Form Styling */
+form {
+  text-align: left; /* Align form elements left */
+}
+
+.form-group {
+  margin-bottom: 22px; /* Adjusted spacing */
+  position: relative; /* Needed for absolute positioning of icon */
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem; /* Smaller label */
+  font-weight: 500; /* Adjusted weight */
+  color: #333;
+  margin-bottom: 6px; /* Tighter space */
+}
+
+/* !! REVISED Input Field Base Style (Minimalist) !! */
+.form-group input[type="email"],
+.form-group input#password {
+  width: 100%;
+  padding: 15px 0px 10px 0px; /* Adjust padding: more top, less bottom, no left/right */
+  border: none; /* Remove all borders */
+  border-bottom: 1px solid #eaeaea; /* Add only a subtle bottom border */
+  border-radius: 0; /* No border radius needed */
+  font-size: 0.95rem;
+  background-color: transparent; /* Make background transparent */
+  font-family: "Inter", sans-serif;
+  color: #333;
+  transition: border-color 0.2s ease; /* Only transition border color */
+  -webkit-appearance: none;
+  appearance: none;
+}
+/* Specific padding for password input to accommodate icon */
+.form-group input#password {
+  padding-right: 50px;
+}
+
+.form-group input::placeholder {
+  color: #bbbbbb;
+}
+
+/* !! REVISED Input Field Focus Styles (Minimalist) !! */
+.form-group input[type="email"]:focus,
+.form-group input#password:focus {
+  outline: none; /* Still remove default outline */
+  border-bottom-color: #333333; /* Make bottom border darker on focus */
+  box-shadow: none; /* Remove the box-shadow */
+}
+
+/* Input Field Active Styles (Minimalist) */
+.form-group input[type="email"]:active,
+.form-group input#password:active {
+  outline: none;
+  border-bottom-color: #333333; /* Keep focused border color */
+}
+
+.password-wrapper {
+  /* This wrapper might not be strictly needed anymore */
+  /* if the icon is positioned relative to form-group */
+  position: relative; /* Keep if needed */
+  display: block; /* Change from flex if icon is absolute to form-group */
+}
+
+/* Password Toggle Button Base Style (Adjusted Position) */
+.toggle-password {
+  position: absolute;
+  right: 0px; /* Align to the very right */
+  top: 0; /* Align to top of the form-group */
+  bottom: 0; /* Stretch vertically within form-group */
+  width: 50px;
+  background: none !important;
+  border: none !important;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center; /* Vertically center icon */
+  justify-content: center;
+  color: #999999;
+  transition: color 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+}
+
+/* Only change ICON color on hover */
+.toggle-password:hover {
+  color: #555555;
+  background: none !important;
+}
+
+/* Focus states: Remove ALL visual cues except icon color */
+.toggle-password:focus,
+.toggle-password:focus-visible {
+  outline: none !important;
+  outline-style: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  color: #333333 !important; /* Icon color indicates focus */
+}
+
+/* Active state: Only change icon color */
+.toggle-password:active {
+  outline: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  color: #000000 !important; /* Darkest icon color when pressed */
+}
+
+/* Ensure the icon itself keeps its base size */
+.toggle-password i {
+  font-size: 1.1rem;
+  pointer-events: none;
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px; /* Increased spacing */
+  font-size: 0.85rem; /* Base size for this row */
+  padding-top: 5px; /* Add slight padding above if needed */
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* Make whole area clickable */
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: #000;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  vertical-align: middle; /* Align checkbox better */
+}
+
+/* Remember Me / Forgot Password Text Correction */
+.remember-me label {
+  margin-bottom: 0; /* Override default label margins */
+  font-weight: 400; /* Lighter weight */
+  color: #666; /* Lighter color */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection on click */
+  vertical-align: middle;
+}
+
+/* Checkbox Focus Styles */
+.remember-me input[type="checkbox"]:focus {
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 0 3px rgba(90, 130, 230, 0.15); /* Match other elements */
+}
+.remember-me:focus-within label {
+  color: #111; /* Darken label slightly when checkbox focused */
+}
+
+.forgot-password {
+  color: #222; /* Darker color */
+  text-decoration: none;
+  font-weight: 500; /* Medium weight */
+}
+.forgot-password:hover {
+  text-decoration: underline;
+}
+.forgot-password:focus {
+  /* Add focus style for accessibility */
+  outline: none;
+  text-decoration: underline;
+  color: #000;
+  background-color: rgba(90, 130, 230, 0.1); /* Subtle background highlight */
+  border-radius: 3px;
+}
+.forgot-password:active {
+  outline: none;
+  color: #555; /* Slightly dim during press */
+  background-color: rgba(
+    90,
+    130,
+    230,
+    0.05
+  ); /* Lighter background during press */
+}
+
+/* Button Styling */
+.form-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between buttons */
+  margin-bottom: 40px; /* Adjusted spacing */
+  margin-top: 20px; /* Add margin above buttons */
+}
+
+.btn {
+  width: 100%;
+  padding: 15px; /* Consistent padding */
+  border: none; /* Base border */
+  border-radius: 10px; /* Consistent radius */
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    border-color 0.2s ease, transform 0.1s ease; /* Faster transition for active state */
+  font-family: "Inter", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none; /* Remove underline from potential link buttons */
+  -webkit-appearance: none; /* Remove default OS/browser button styling */
+  appearance: none; /* Remove default OS/browser button styling */
+}
+
+/* Sign In Button (Keep As Is) */
+.btn-signin {
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: 600; /* Bolder */
+  border: none; /* Explicitly no border */
+}
+.btn-signin:hover {
+  background-color: #222;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+.btn-signin:focus {
+  background-color: #111;
+  box-shadow: 0 0 0 3px rgba(50, 50, 50, 0.25); /* Darker glow for black button */
+}
+.btn-signin:active {
+  outline: none;
+  background-color: #333; /* Darker than hover/focus */
+  transform: translateY(1px); /* Subtle press effect */
+  box-shadow: none; /* Remove shadow during press */
+}
+
+/* !! REVISED Google Button Styling (Minimalist) !! */
+.btn-google {
+  background-color: transparent; /* Transparent background */
+  color: #555555; /* Adjust initial text color if needed */
+  border: 1px solid #eaeaea; /* Keep a subtle border */
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease; /* Update transitions */
+}
+.btn-google:hover {
+  background-color: #f9f9f9; /* Subtle background on hover */
+  color: #333333; /* Darker text on hover */
+  border-color: #dddddd; /* Slightly darker border */
+  box-shadow: none; /* Ensure no shadow on hover */
+}
+.btn-google:focus {
+  outline: none; /* Remove default outline */
+  background-color: #f9f9f9; /* Keep hover background */
+  color: #333333; /* Keep hover text color */
+  border-color: #cccccc; /* Darker border than hover */
+  /* Add focus ring for accessibility */
+  box-shadow: 0 0 0 3px rgba(100, 100, 100, 0.15);
+}
+.btn-google:active {
+  outline: none;
+  background-color: #f0f0f0; /* Slightly darker background on press */
+  color: #333333;
+  border-color: #cccccc;
+  transform: translateY(1px);
+  box-shadow: none; /* Remove focus shadow during press */
+}
+
+.google-logo {
+  width: 18px;
+  height: 18px;
+}
+
+/* Sign Up Link */
+.signup-link {
+  font-size: 0.9rem; /* Adjusted size */
+  color: #777777; /* Lighter gray for non-link part */
+  text-align: center; /* Ensure centered */
+  margin-top: 10px; /* Space above */
+  margin-bottom: 15px; /* Space below */
+}
+
+.signup-link a {
+  color: #000000; /* Black link */
+  font-weight: 700; /* Bolder weight */
+  text-decoration: none;
+}
+.signup-link a:hover {
+  text-decoration: underline;
+}
+.signup-link a:focus {
+  /* Add focus style for accessibility */
+  outline: none;
+  text-decoration: underline;
+  color: #000;
+  background-color: rgba(90, 130, 230, 0.1); /* Subtle background highlight */
+  border-radius: 3px;
+  padding: 0 2px; /* Add slight padding for background */
+}
+.signup-link a:active {
+  outline: none;
+  color: #555; /* Slightly dim during press */
+  background-color: rgba(
+    90,
+    130,
+    230,
+    0.05
+  ); /* Lighter background during press */
+}
+
+/* Responsiveness (Adjustments) */
+@media (max-width: 992px) {
+  /* ... (Keep existing responsive styles) ... */
+  .login-container {
+    flex-direction: column;
+    width: 95%;
+    max-width: 480px; /* Adjusted max width for stacked view */
+    min-height: auto; /* Reset min-height */
+    height: auto; /* Allow height to adjust to content */
+    border-radius: 20px; /* Adjusted radius */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .decorative-panel {
+    display: none; /* Keep hidden on small screens */
+  }
+
+  .login-panel {
+    flex-basis: auto; /* Reset basis */
+    border-radius: 20px; /* Match container */
+    padding: 35px 30px; /* Adjusted padding */
+    justify-content: flex-start; /* Align content to top */
+    height: auto;
+  }
+
+  .logo {
+    align-self: center; /* Center logo when stacked */
+    margin-top: 0;
+    margin-bottom: 30px; /* Space below logo */
+    height: 30px; /* Adjust size for mobile if needed */
+  }
+
+  .login-form-container {
+    max-width: 100%;
+    margin: 0 auto; /* Reset margin */
+    padding-bottom: 0; /* Reset padding */
+    flex-grow: 0; /* Don't allow form to grow excessively */
+  }
+
+  .login-form-container h2 {
+    font-size: 2.2rem; /* Adjust size */
+  }
+  .subheading {
+    margin-bottom: 35px; /* Adjust spacing */
+  }
+  .form-buttons {
+    margin-bottom: 30px; /* Adjust spacing */
+    margin-top: 15px; /* Adjust spacing */
+  }
+  .signup-link {
+    margin-top: 25px; /* Add space before sign up link */
+    margin-bottom: 10px; /* Reduce bottom margin */
+  }
+  /* Adjust input padding for mobile if needed */
+  .form-group input[type="email"],
+  .form-group input#password {
+    padding-top: 12px;
+    padding-bottom: 8px;
+  }
+}
